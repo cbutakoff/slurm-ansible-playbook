@@ -1,0 +1,12 @@
+---
+slurm_packages:
+  - slurmd-ohpc
+  - libpmi-ohpc
+
+slurm_role: compute
+
+install_packages:
+  - mpich
+  - openmpi3
+
+monitoring_role: client

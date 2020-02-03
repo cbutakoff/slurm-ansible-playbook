@@ -1,0 +1,26 @@
+---
+
+slurm_accounting_db_password: "{{ lookup('password', '/tmp/slurmpasswordfile chars=ascii_letters,digits,hexdigits') }}"
+
+slurm_packages:
+  - slurmctld-ohpc
+  - slurmdbd-ohpc
+
+slurm_role: mgmt
+
+slurm_elastic:
+  oracle:
+    config_directory: /home/slurm/.oci/
+
+install_packages:
+  - xorg-x11-xauth
+  - mpich-devel
+  - openmpi-devel
+  - openmpi3-devel
+  - devtoolset-8
+  - "@Development Tools"
+
+monitoring_role: master
+grafana_admin_password: "{{ lookup('password', '/tmp/grafanapasswordfile chars=ascii_letters,digits,hexdigits') }}"
+
+bootstrap_ansible_pull_playbook: compute.yml

@@ -1,0 +1,35 @@
+# ACCOUNTING
+JobAcctGatherType=jobacct_gather/cgroup
+JobAcctGatherFrequency=30
+
+AccountingStorageType=accounting_storage/slurmdbd
+
+# ELASTIC
+ResumeProgram=/usr/local/bin/startnode
+SuspendProgram=/usr/local/bin/stopnode
+SuspendTime=900
+# ResumeRate tuned for OCI rate limit in nodes/min
+ResumeRate=20
+ResumeTimeout=600
+SuspendTimeout=60
+
+# MPI
+MpiDefault=pmi2
+
+{% if slurm_gres_types is defined and slurm_gres_types %}
+# GRES
+GresTypes={{ slurm_gres_types }}
+{% endif %}
+
+# Plugins
+#JobSubmitPlugins=python
+
+# STARTNODES
+# This section will be replaced dynamically by CitC
+# Make sure STARTNODES and ENDNODES are present in this file
+# ENDNODES
+
+# PARTITIONS
+{% for partition in slurm_partitions %}
+PartitionName={{ partition.name }} Nodes={{ partition.nodelist }} MaxTime=INFINITE State=UP Default={{ partition.default | default("NO") }} OverSubscribe={{ partition.oversubscribe | default("NO") }}
+{% endfor %}

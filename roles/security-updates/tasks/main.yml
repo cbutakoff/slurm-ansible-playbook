@@ -1,0 +1,7 @@
+---
+- name: Install security updates
+  yum:
+    name: '*'
+    security: yes
+    state: latest
+    exclude: kernel*

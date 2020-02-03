@@ -1,0 +1,2 @@
+---
+ohpc_lmod_mpi_default: "lmod-defaults-gnu8-openmpi3-ohpc"

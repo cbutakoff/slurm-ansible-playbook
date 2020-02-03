@@ -1,0 +1,22 @@
+---
+- name: Install epel-release
+  yum:
+    name: "{{ epel_release_rpm }}"
+    state: present
+
+- name: Enable OpenHPC Intel Arch repository for local use
+  yum:
+    name: "{{ ohpc_release_rpm_intel }}"
+    state: present
+
+- name: Lmod
+  yum:
+    name: "lmod-ohpc"
+    state: present
+
+- name: Install the lmod-defaults package on master and a development node
+  yum: name="{{item}}" state=present
+  with_items:
+  - "{{ ohpc_lmod_mpi_default }}"
+  - gnu8-compilers-ohpc.x86_64
+  - openmpi3-pmix-slurm-gnu8-ohpc.x86_64

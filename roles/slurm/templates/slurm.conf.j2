@@ -1,0 +1,34 @@
+ClusterName={{ slurm_cluster_name }}
+ControlMachine={{ slurm_control_machine }}
+
+SlurmUser=slurm
+SlurmctldPort=6817
+SlurmdPort=6818
+AuthType=auth/munge
+StateSaveLocation=/var/spool/slurm
+ProctrackType=proctrack/cgroup
+#Prolog=
+#Epilog=
+#SrunProlog=
+#SrunEpilog=
+#TaskProlog=
+#TaskEpilog=
+TaskPlugin=task/cgroup
+#UsePAM=
+
+# TIMERS
+SlurmctldTimeout=300
+SlurmdTimeout=300
+MinJobAge=300
+
+# SCHEDULING
+SchedulerType=sched/backfill
+#SchedulerAuth=
+SelectType=select/cons_res
+SelectTypeParameters=CR_CPU_Memory
+
+# LOGGING
+SlurmctldLogFile=/var/log/slurm/slurmctld.log
+SlurmdLogFile=/var/log/slurm/slurmd.log
+
+include /mnt/shared/etc/slurm/slurm.conf

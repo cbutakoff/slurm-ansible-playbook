@@ -1,0 +1,24 @@
+---
+#
+# This is the one file that violates my rule of "don't just throw a bunch of
+# stuff into a role." These are all really useful tools, with single line
+# installs
+#
+
+- name: yum install useful tools
+  package:
+    name:
+      - curl
+      - htop
+      - iotop
+      - lsof
+      - rsync
+      - screen
+      - sysstat
+      - tcpdump
+      - traceroute
+      - wget
+      - nmap
+      - git
+      - cmake
+      - tree
