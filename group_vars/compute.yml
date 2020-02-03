@@ -8,5 +8,9 @@ slurm_role: compute
 install_packages:
   - mpich
   - openmpi3
+  - libSM
+  - libX11
+  - libXext
+  - libGLEW
 
 monitoring_role: client
