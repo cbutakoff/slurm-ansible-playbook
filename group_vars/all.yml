@@ -19,6 +19,6 @@ slurm_partitions:
 filesystem_target_address: fileserver
 filesystem_mount_point: /shared
 
-ansible_pull_repo: https://github.com/omula/slurm-ansible-playbook.git
+ansible_pull_repo: https://github.com/cbutakoff/slurm-ansible-playbook.git
 
 software_install_dir: /mnt/{{ filesystem_mount_point }}
