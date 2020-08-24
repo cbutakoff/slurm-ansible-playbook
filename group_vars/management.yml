@@ -14,9 +14,9 @@ slurm_elastic:
 
 install_packages:
   - xorg-x11-xauth
-  - mpich-devel
-  - openmpi-devel
-  - openmpi3-devel
+  #- mpich-devel
+  #- openmpi-devel
+  #- openmpi3-devel
   - devtoolset-8
   - "@Development Tools"
 

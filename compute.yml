@@ -17,4 +17,4 @@
     - ohpc
     - packages
     - slurm
-    - monitoring
+    #- monitoring

@@ -48,7 +48,7 @@
   roles:
     - sos
     - finalise
-    - monitoring
+    #- monitoring
     - clustershell
     - packages
     - debug-tools
