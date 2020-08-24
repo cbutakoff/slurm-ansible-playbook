@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.user.oc1..
+fingerprint=
+key_file=/home/slurm/.oci/oci_api_key.pem
+tenancy=ocid1.tenancy.oc1.
+region=eu-frankfurt-1

@@ -1,3 +1,6 @@
+#to get ansible working
+https://community.oracle.com/docs/DOC-1032922
+
 # Addomer
 
 Ansible scripts for Addomer.
