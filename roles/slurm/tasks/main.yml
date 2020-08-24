@@ -124,14 +124,22 @@
 
 - name: open all ports
   firewalld:
-    port: 0-65535/tcp
-    source: 10.0.0.0/8
+    port: "{{ item }}"
     immediate: true
     permanent: true
     state: enabled
+  loop:
+    - 6817/udp
+    - 6817/tcp
+    - 6818/udp
+    - 6818/tcp
+    - 7321/udp
+    - 7321/tcp
   notify:
     - restart firewalld
     - restart slurmd
+
+
 
 - include_tasks: elastic.yml
   when: slurm_role == "mgmt"
