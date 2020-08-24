@@ -25,7 +25,7 @@
 
 - name: copy OCI private key
   copy:
-    src: /home/costa/.oci/oci_api_key.pem
+    src: /home/opc/oci_api_key.pem
     dest: "{{ slurm_elastic.oracle.config_directory }}/oci_api_key.pem"
     owner: slurm
     group: slurm
